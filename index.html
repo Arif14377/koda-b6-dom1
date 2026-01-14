@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DOM 1 - Temperature Conversion</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>Konversi Suhu Celcius</h1>
+    <h2>Suhu Akhir:</h2>
+    <form>
+        <div>
+            <label for="">Suhu :</label>
+            <input type="text" name="" id=""><br>
+
+            <input type="radio" name="fahrenheit" id="fahrenheit" value="fahrenheit">
+            <label for="fahrenheit">Fahrenheit</label><br>
+
+            <input type="radio" name="reamur" id="reamur" value="reamur">
+            <label for="reamur">Reamur</label><br>
+
+            <input type="radio" name="kelvin" id="kelvin" value="kelvin">
+            <label for="kelvin">Kelvin</label><br><br>
+
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+    <div>
+        <h2>Hasil konversi:</h2>
+        <p id="hasil">300</p>
+    </div>
+
+    <script>
+        const suhuAwal = 32
+
+        const toFahrenheit = (suhuAwal * 9/5) + 32
+        const toReamur = (4/5) * suhuAwal
+        const toKelvin = suhuAwal + 273.15
+
+        const suhuAkhir = toFahrenheit
+        // console.log(suhuAkhir)
+
+        const hasil = document.getElementById("hasil")
+        hasil.textContent = suhuAkhir
+
+    </script>
+</body>
+</html>
