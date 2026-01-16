@@ -7,19 +7,19 @@
 </head>
 <body>
     <h1>Konversi Suhu Celcius</h1>
-    <h2>Suhu Akhir:</h2>
     <form>
         <div>
-            <label for="">Suhu :</label>
-            <input type="text" name="" id=""><br>
-
-            <input type="radio" name="fahrenheit" id="fahrenheit" value="fahrenheit">
+            <label for="suhu">Suhu :</label>
+            <input type="text" name="suhu" id="suhu" value="20"><br>
+            
+            <h2>Suhu Akhir:</h2>
+            <input type="radio" name="suhuAkhir" id="fahrenheit" value="fahrenheit">
             <label for="fahrenheit">Fahrenheit</label><br>
 
-            <input type="radio" name="reamur" id="reamur" value="reamur">
+            <input type="radio" name="suhuAkhir" id="reamur" value="reamur">
             <label for="reamur">Reamur</label><br>
 
-            <input type="radio" name="kelvin" id="kelvin" value="kelvin">
+            <input type="radio" name="suhuAkhir" id="kelvin" value="kelvin">
             <label for="kelvin">Kelvin</label><br><br>
 
             <button type="submit">Submit</button>
@@ -28,21 +28,25 @@
 
     <div>
         <h2>Hasil konversi:</h2>
-        <p id="hasil">300</p>
+        <p id="hasilCtoF"></p>
+        <p id="hasilCtoR"></p>
+        <p id="hasilCtoK"></p>
     </div>
 
     <script>
-        const suhuAwal = 32
+        const inputan = document.getElementById("suhu")
+        // console.log(inputan.value)
+        const suhuAwal = inputan.value
 
         const toFahrenheit = (suhuAwal * 9/5) + 32
         const toReamur = (4/5) * suhuAwal
         const toKelvin = suhuAwal + 273.15
 
-        const suhuAkhir = toFahrenheit
-        // console.log(suhuAkhir)
-
         const hasil = document.getElementById("hasil")
-        hasil.textContent = suhuAkhir
+        hasilCtoF.textContent = `Hasil konversi ke Fahrenheit : ${toFahrenheit}`
+        hasilCtoR.textContent = `Hasil konversi ke Reamur : ${toReamur}`
+        hasilCtoK.textContent = `Hasil konversi ke Kelvin : ${toKelvin}`
+
 
     </script>
 </body>
